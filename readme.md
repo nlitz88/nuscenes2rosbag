@@ -1,40 +1,40 @@
 
 # `nuscenes2bag`
 
-`nuscenes`数据集转换成`rosbag`包
+Convert `nuscenes` dataset to `rosbag` package
 
 ![](rviz/1.png)
 
-## 1 下载编译
+## 1 Download and Compile
 
 ~~~python
-# 1. 建立ros工作空间
+# 1. Create a ROS workspace
 mkdir -p nus2bag_ws/src
 
-# 2. 拉取源码
+# 2. Clone the source code
 cd nus2bag_ws/src
 git clone https://github.com/linClubs/nuscenes2rosbag.git
 
-# 3. 安装功能包所需依赖
+# 3. Install package dependencies
 cd ..
 rosdep install -r -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 
-# 4. 编译
+# 4. Build
 catkin_make
 ~~~
 
 
 ## 2 Converting the 'mini' dataset:
 
-1. 下载mini数据集
+1. Download the mini dataset
 
-[下载地址](https://link.csdn.net/?target=https%3A%2F%2Fwww.nuscenes.org%2Fnuscenes%23download)
+[Download Link](https://link.csdn.net/?target=https%3A%2F%2Fwww.nuscenes.org%2Fnuscenes%23download)
 
-需要注册登录后才能下载
+Registration and login are required to download.
 
-下载 **`Map expansion-v1.3`版** 与 **`Full dataset(v1.0)-mini`**版本即可
+Download the **`Map expansion-v1.3`** and **`Full dataset(v1.0)-mini`** versions.
 
-下载后解压得到`nuScenes-map-expansion-v1.3`与`v1.0-mini`两个文件夹, 把`nuScenes-map-expansion-v1.3`中的三个文件复制到`v1.0-mini/map`目录下。最终得到新`v1.0-mini`文件夹重命名为`nuscenes`数据集目录结构如下：
+After downloading, extract the files and copy the three files from `nuScenes-map-expansion-v1.3` to the `v1.0-mini/map` directory. Finally, rename the new `v1.0-mini` folder to `nuscenes` to obtain the following directory structure for the dataset:
 
 ~~~python
 nuscenes/
@@ -52,36 +52,36 @@ nuscenes/
 ~~~
 
 
-2. 将`mini`中`103`场景转成ros包
+2. Convert the `mini` dataset scenes to rosbag
 
 ~~~python
 rosrun nuscenes2bag nuscenes2bag --scene_number 0061 --dataroot data/nuscenes/ --out nuscenes_bags/
 ~~~
 
-+ --scene_number    场景  0061 0103
-+ --dataroot        数据路径
-+ --out             rosbag保存地址
-+ --version         可选参数 `v1.0-mini`(默认) , `v1.0-trainval`
-+ --jobs            4 同时处理4个场景
++ --scene_number    Scene number (0061 or 0103)
++ --dataroot        Data path
++ --out             Rosbag save path
++ --version         Optional parameter: `v1.0-mini` (default) or `v1.0-trainval`
++ --jobs            Number of scenes to process simultaneously (default: 4)
 
-+ `mini`中所有场景
++ All scenes in `mini` dataset
 ~~~python
 103.bag   1094.bag  553.bag  655.bag  796.bag
 1077.bag  1100.bag  61.bag   757.bag  916.bag
 ~~~
 
-4. 转换所有`mini`场景数据集 
+4. Convert all `mini` dataset scenes
 
 ~~~python
 rosrun nuscenes2bag nuscenes2bag --dataroot /home/lin/code/maptr2/MapTR/data/nuscenes/ --out nuscenes_bags/ --jobs 4
 ~~~
 
-5. 可视化
+5. Visualization
 ~~~python
-# 1. 播放数据集
+# 1. Play the dataset
 rosbag play 103.bag -l
 
-# 2 打开可视化窗口
+# 2. Open the visualization window
 roslaunch nuscenes2bag view.launch
 ~~~
 
