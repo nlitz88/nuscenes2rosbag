@@ -15,6 +15,9 @@ mkdir -p nus2bag_ws/src
 cd nus2bag_ws/src
 git clone https://github.com/linClubs/nuscenes2rosbag.git
 
+# UPDATE: have to run rosdep init with --include-eol-distros flag, as melodic is deprecated and will otherwise be skipped.
+rosdep update --include-eol-distros
+
 # 3. Install package dependencies
 cd ..
 rosdep install -r -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
