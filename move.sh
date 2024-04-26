@@ -1,0 +1,24 @@
+find ./v1.0-trainval10_blobs/samples/CAM_BACK/ -mindepth 1 -exec mv -t ./nuscenes/samples/CAM_BACK/ {} + && \
+find ./v1.0-trainval10_blobs/samples/CAM_BACK_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/samples/CAM_BACK_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/CAM_BACK_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/samples/CAM_BACK_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/CAM_FRONT/ -mindepth 1 -exec mv -t ./nuscenes/samples/CAM_FRONT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/CAM_FRONT_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/samples/CAM_FRONT_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/CAM_FRONT_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/samples/CAM_FRONT_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/LIDAR_TOP/ -mindepth 1 -exec mv -t ./nuscenes/samples/LIDAR_TOP/ {} + && \
+find ./v1.0-trainval10_blobs/samples/RADAR_BACK_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/samples/RADAR_BACK_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/RADAR_BACK_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/samples/RADAR_BACK_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/RADAR_FRONT/ -mindepth 1 -exec mv -t ./nuscenes/samples/RADAR_FRONT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/RADAR_FRONT_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/samples/RADAR_FRONT_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/samples/RADAR_FRONT_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/samples/RADAR_FRONT_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/CAM_BACK/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/CAM_BACK/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/CAM_BACK_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/CAM_BACK_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/CAM_BACK_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/CAM_BACK_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/CAM_FRONT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/CAM_FRONT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/CAM_FRONT_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/CAM_FRONT_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/CAM_FRONT_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/CAM_FRONT_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/LIDAR_TOP/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/LIDAR_TOP/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/RADAR_BACK_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/RADAR_BACK_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/RADAR_BACK_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/RADAR_BACK_RIGHT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/RADAR_FRONT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/RADAR_FRONT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/RADAR_FRONT_LEFT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/RADAR_FRONT_LEFT/ {} + && \
+find ./v1.0-trainval10_blobs/sweeps/RADAR_FRONT_RIGHT/ -mindepth 1 -exec mv -t ./nuscenes/sweeps/RADAR_FRONT_RIGHT/ {} +
